@@ -13,23 +13,25 @@
     <link rel="stylesheet" type="text/css" href="/node_modules/viewerjs/dist/viewer.min.css">
 
     <style type="text/css">
-        body {
-            background-color: #FFFFFF;
+        body .inverted.upper {
+            padding: 2em 0em 4em 0em;
+            background-color: #1b1c1d;
         }
         
         .main.container {
-            margin-top: 2em;
+            color: #fff;
+            background-color: #1b1c1d;
         }
         
         .secondary.menu {
-            margin-top: 4em;
+            margin-top: 0;
             border-radius: 0;
             border: none;
             box-shadow: none;
             transition: box-shadow 0.5s ease, padding 0.5s ease;
         }
         
-        .secondary.menu .item img.logo {
+        .ui.secondary.menu .item>img:not(.ui) {
             margin-right: 1.5em;
         }
         
@@ -45,9 +47,12 @@
         }
         
         .secondary.menu.fixed {
-            background-color: #FFFFFF;
-            border: 1px solid #DDD;
+            border: 1px solid rgba(0, 0, 0, 0.4);
             box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .ui.secondary.inverted.menu {
+            background-color: #1b1c1d;
         }
         
         .overlay.fixed .menu {
@@ -72,48 +77,81 @@
             top: 20em;
             position: absolute;
         }
+        
+        .list.link .item .ui.image {
+            margin: 0px 0px 0px 8px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="ui main text container">
-        <h1 class="ui header">Nama UKM</h1>
-        <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
+    <div class="inverted upper">
+        <div class="ui main text container ">
+            <h1 class="ui header inverted">Nama UKM</h1>
+            <p>Deskripsi UKM</p>
+            <div class="ui label red">
+                <i class="white marker icon "></i> Jalan ITS Raya 28, Sukolilo, Surabaya
+            </div>
+            <div class="ui label blue">
+                <i class="white call icon "></i> +62 8562-747-444
+            </div>
+            <div class="ui label yellow">
+                <i class="white mail icon"></i> ukm@gmail.com
+            </div>
+        </div>
     </div>
 
-    <div class="ui borderless secondary menu">
+    <div class="ui borderless secondary menu inverted">
         <div class="ui text container">
             <div href="#" class="header item">
                 <img class="logo" src="favicon.png"> Nama
             </div>
-            <a href="#" class="item" data-tab="gallery">Galeri</a>
             <a href="#" class="item active" data-tab="product">Produk</a>
+            <a href="#" class="item" data-tab="gallery">Galeri</a>
             <a href="#" class="item" data-tab="contact">Kontak</a>
         </div>
     </div>
 
 
-    <div id="sticky-menu" class="ui text container">
+    <div id="sticky-menu" class="ui text container borderless">
         <div class="left ui rail internal">
-            <div class="ui labeled icon vertical menu">
+            <div class="ui inverted labeled icon vertical menu">
                 <a class="item"><i class="arrow left icon"></i> Back</a>
                 <a class="item"><i class="block layout icon"></i> Menu</a>
                 <a class="item"><i class="user icon"></i> Profil</a>
             </div>
         </div>
-        <div class="ui tab segment" data-tab="gallery">
-            <div id="images" class="ui small images center">
-                <img src="image.png" title="img1" onclick="viewer.view(1)">
-                <img src="image.png" title="img2" onclick="viewer.view(2)">
-                <img src="image.png" title="img3" onclick="viewer.view(3)">
-                <img src="image.png" title="img4" onclick="viewer.view(4)">
-                <img src="image.png" title="img5" onclick="viewer.view(5)">
-                <img src="image.png" title="img6" onclick="viewer.view(6)">
-                <img src="image.png" title="img7" onclick="viewer.view(7)">
-                <img src="image.png" title="img8" onclick="viewer.view(8)">
+        <div class="ui tab" data-tab="gallery">
+            <h2 class="header">Galeri</h2>
+            <div id="images" class="ui small images">
+                <a href="#" onclick="viewer.view(1)">
+                    <img src="image.png" title="img1">
+                </a>
+                <a href="#" onclick="viewer.view(2)">
+                    <img src="image.png" title="img2">
+                </a>
+                <a href="#" onclick="viewer.view(3)">
+                    <img src="image.png" title="img3">
+                </a>
+                <a href="#" onclick="viewer.view(4)">
+                    <img src="image.png" title="img4">
+                </a>
+                <a href="#" onclick="viewer.view(5)">
+                    <img src="image.png" title="img5">
+                </a>
+                <a href="#" onclick="viewer.view(6)">
+                    <img src="image.png" title="img6">
+                </a>
+                <a href="#" onclick="viewer.view(7)">
+                    <img src="image.png" title="img7">
+                </a>
+                <a href="#" onclick="viewer.view(8)">
+                    <img src="image.png" title="img8">
+                </a>
             </div>
         </div>
-        <div class="ui active tab segment" data-tab="product">
+        <div class="ui active tab" data-tab="product">
+            <h2 class="header">Daftar Produk</h2>
             <div class="ui items">
                 <div class="item">
                     <div class="ui small image">
@@ -162,25 +200,112 @@
                 </div>
             </div>
         </div>
-        <div class="ui tab segment" data-tab="contact">
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
-                est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-                sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt
-                quis, accumsan porttitor, facilisis luctus, metus</p>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
-                est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-                sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt
-                quis, accumsan porttitor, facilisis luctus, metus</p>
+        <div class="ui tab" data-tab="contact">
+            <h2 class="header">Alamat dan Kontak</h2>
+            <div class="ui three column grid">
+                <div class="column">
+                    <div class="ui list link">
+                        <div class="item">
+                            <i class="icon marker red"></i>
+                            <div class="content">
+                                <div class="header">Alamat</div>
+                                <div class="list">
+                                    <a class="item">Alamat 1</a>
+                                    <a class="item">Alamat 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="icon mail yellow"></i>
+                            <div class="content">
+                                <div class="header">Email</div>
+                                <div class="list">
+                                    <a class="item">Email 1</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="icon linkify blue"></i>
+                            <div class="content">
+                                <div class="header">Website</div>
+                                <div class="list">
+                                    <a class="item">Website 1</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="icon call grey"></i>
+                            <div class="content">
+                                <div class="header">Telepon</div>
+                                <div class="list">
+                                    <a class="item">Telepon 1</a>
+                                    <a class="item">Telepon 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="icon whatsapp green"></i>
+                            <div class="content">
+                                <div class="header">Whatsapp</div>
+                                <div class="list">
+                                    <a class="item">Whatsapp 1</a>
+                                    <a class="item">Whatsapp 2</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="header">Media Sosial</h2>
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="ui list link">
+                        <div class="item">
+                            <i class="right icon facebook blue"></i>
+                            <a class="content">Facebook</a>
+                        </div>
+                        <div class="item">
+                            <i class="right icon twitter teal"></i>
+                            <a class="content">Twitter</a>
+                        </div>
+                        <div class="item">
+                            <i class="right icon instagram pink"></i>
+                            <a class="content">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right aligned">
+                    <div class="ui list link">
+                        <div class="item">
+                            <a class="content">Line</a>
+                            <img class="ui image" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" style="width:15px">
+                        </div>
+                        <div class="item ">
+                            <a class="content">BukaLapak</a>
+                            <img class="ui image" src="https://www.bukalapak.com/images/desktop/aset-brand/download/Ikon-Bukalapak-Merah.svg" style="width:15px">
+
+                        </div>
+                        <div class="item ">
+                            <a class="content">Tokopedia</a>
+                            <img class="ui image" src="https://ecs7.tokopedia.net/img/microsite-brand-resource/hires-toped-tokopedia-mascot-new.png" style="width:15px">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
     </div>
 
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui text container">
+            @copyright Dewangga Prasetya Praja 2017
+        </div>
+    </div>
     <!-- Semantic JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script src="/node_modules/viewerjs/dist/viewer.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js " integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin=" anonymous "></script>
+    <script src="semantic/dist/semantic.min.js "></script>
+    <script src="/node_modules/viewerjs/dist/viewer.min.js "></script>
     <script>
         var viewer;
         $(document)
