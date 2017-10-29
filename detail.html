@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <title>Detail UKM</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Semantic CSS -->
+    <link rel="icon" href="favicon.png" title="Katalog UKM">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/viewerjs/dist/viewer.min.css">
+
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF;
+        }
+        
+        .main.container {
+            margin-top: 2em;
+        }
+        
+        .secondary.menu {
+            margin-top: 4em;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            transition: box-shadow 0.5s ease, padding 0.5s ease;
+        }
+        
+        .secondary.menu .item img.logo {
+            margin-right: 1.5em;
+        }
+        
+        .overlay {
+            float: left;
+            margin: 0em 3em 1em 0em;
+        }
+        
+        .overlay .menu {
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
+        }
+        
+        .secondary.menu.fixed {
+            background-color: #FFFFFF;
+            border: 1px solid #DDD;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .overlay.fixed .menu {
+            left: 800px;
+        }
+        
+        .text.container .left.floated.image {
+            margin: 2em 2em 2em -4em;
+        }
+        
+        .text.container .right.floated.image {
+            margin: 2em -4em 2em 2em;
+        }
+        
+        .ui.footer.segment {
+            margin: 5em 0em 0em;
+            padding: 5em 0em;
+        }
+        
+        .ui.rail {
+            z-index: 10;
+            top: 20em;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui main text container">
+        <h1 class="ui header">Nama UKM</h1>
+        <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
+    </div>
+
+    <div class="ui borderless secondary menu">
+        <div class="ui text container">
+            <div href="#" class="header item">
+                <img class="logo" src="favicon.png"> Nama
+            </div>
+            <a href="#" class="item" data-tab="gallery">Galeri</a>
+            <a href="#" class="item active" data-tab="product">Produk</a>
+            <a href="#" class="item" data-tab="contact">Kontak</a>
+        </div>
+    </div>
+
+
+    <div id="sticky-menu" class="ui text container">
+        <div class="left ui rail internal">
+            <div class="ui labeled icon vertical menu">
+                <a class="item"><i class="arrow left icon"></i> Back</a>
+                <a class="item"><i class="block layout icon"></i> Menu</a>
+                <a class="item"><i class="user icon"></i> Profil</a>
+            </div>
+        </div>
+        <div class="ui tab segment" data-tab="gallery">
+            <div id="images center" class="ui small images">
+                <img src="image.png" title="img1" onclick="viewer.view(1)">
+                <img src="image.png" title="img2" onclick="viewer.view(2)">
+                <img src="image.png" title="img3" onclick="viewer.view(3)">
+                <img src="image.png" title="img4" onclick="viewer.view(4)">
+                <img src="image.png" title="img5" onclick="viewer.view(5)">
+                <img src="image.png" title="img6" onclick="viewer.view(6)">
+                <img src="image.png" title="img7" onclick="viewer.view(7)">
+                <img src="image.png" title="img8" onclick="viewer.view(8)">
+            </div>
+        </div>
+        <div class="ui active tab segment" data-tab="product">
+            <div class="ui items">
+                <div class="item">
+                    <div class="ui small image">
+                        <img src="image.png">
+                    </div>
+                    <div class="content">
+                        <div class="header">Arrowhead Valley Camp</div>
+                        <div class="meta">
+                            <span class="price">$1200</span>
+                            <span class="stay">1 Month</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ui small image">
+                        <img src="image.png">
+                    </div>
+                    <div class="content">
+                        <div class="header">Buck's Homebrew Stayaway</div>
+                        <div class="meta">
+                            <span class="price">$1000</span>
+                            <span class="stay">2 Weeks</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ui small image">
+                        <img src="image.png">
+                    </div>
+                    <div class="content">
+                        <div class="header">Astrology Camp</div>
+                        <div class="meta">
+                            <span class="price">$1600</span>
+                            <span class="stay">6 Weeks</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui tab segment" data-tab="contact">
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
+                est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
+                sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt
+                quis, accumsan porttitor, facilisis luctus, metus</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
+                est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
+                sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt
+                quis, accumsan porttitor, facilisis luctus, metus</p>
+        </div>
+
+
+
+    </div>
+
+    <!-- Semantic JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="/node_modules/viewerjs/dist/viewer.min.js"></script>
+    <script>
+        var viewer;
+        $(document)
+            .ready(function() {
+
+                // fix secondary menu to page on passing
+                $('.secondary.menu').visibility({
+                    type: 'fixed'
+                });
+                $('.overlay').visibility({
+                    type: 'fixed',
+                    offset: 80
+                });
+
+                // create tab
+                $('.menu .item')
+                    .tab();
+
+                // create menu
+                $('.vertical.menu')
+                    .sticky({
+                        context: '#sticky-menu',
+                        offset: 85,
+                    });
+
+                // View some images
+                viewer = new Viewer(document.getElementById('images'), {
+                    toolbar: false,
+                });
+            });
+    </script>
+</body>
+
+</html>
